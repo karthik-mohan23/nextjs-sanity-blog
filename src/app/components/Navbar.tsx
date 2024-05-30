@@ -9,7 +9,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import NextThemeSwitch from "./ThemeSwitch";
 
