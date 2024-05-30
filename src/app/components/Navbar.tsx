@@ -51,7 +51,7 @@ export default function NavigationBar() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {desktopLinks.map(({ href, label }) => {
           return (
-            <NavbarItem>
+            <NavbarItem key={label}>
               <Link color="foreground" href={href}>
                 {label}
               </Link>

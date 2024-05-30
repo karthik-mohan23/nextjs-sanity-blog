@@ -1,5 +1,6 @@
-import React from "react";
+"use client";
 import { VisuallyHidden, useSwitch } from "@nextui-org/react";
+import { useTheme } from "next-themes";
 const ThemeSwitch = () => {
   const {
     Component,
@@ -10,9 +11,15 @@ const ThemeSwitch = () => {
     getWrapperProps,
   } = useSwitch();
 
+  const { theme, setTheme } = useTheme();
+
+  const handleTheme = () => {
+    theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
+
   return (
     <div className="flex flex-col gap-2">
-      <Component {...getBaseProps()}>
+      <Component {...getBaseProps()} onClick={handleTheme}>
         <VisuallyHidden>
           <input {...getInputProps()} />
         </VisuallyHidden>
